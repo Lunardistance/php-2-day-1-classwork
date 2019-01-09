@@ -1,13 +1,20 @@
 <?php
-$data = $_GET["e"];
+session_start();
 
-$array = explode(",", $data);
 
-var_dump($array);
 
-$displayed = "<ul>";
-foreach ($array as $value){
-   echo "<li>".$value."</li>";
-}
+if (isset($_GET["e"])) 
+{ 
+   $data = $_GET["e"];
+   if($data){
+      $_SESSION["e"] = $data;
+      
+      var_dump($data);
+      
+      };
+      
+} 
 
-$displayed .= "</ul>";
+echo "<a href='pageView.php'>html view</a>";
+
+

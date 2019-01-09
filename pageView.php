@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+   <?php
+   session_start();
+    $data = $_SESSION["e"];
+
+    $array = explode(",", $data);
+
+    $displayed = "<ul>";
+        foreach ($array as $value){
+            echo "<li>".$value."</li>";
+        }
+
+    $displayed .= "</ul>";
+?>
+
+<a href="page.php?e=">back</a>
 </body>
 </html>
